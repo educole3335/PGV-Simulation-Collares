@@ -1,3 +1,4 @@
-"# PGV-Simulation-Collares" 
+"# PGV-Simulation-Collares"
 experimento-uno ![alt text](image.png)
-![alt text](image-3.png)
+experimento-dos![alt text](image-1.png)
+experimento_tres ![alt text](image-3.png)
