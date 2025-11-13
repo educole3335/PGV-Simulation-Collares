@@ -15,10 +15,10 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("\n===== SIMULADOR DE PRODUCCION Y CONSUMO DE COLLARES =====\n");
 
-        // Configuración del sistema
+        // Configuración del sistema (experimento: un productor y un consumidor)
         int capacidadAlmacen = 5;
-        long tiempoMaximoProduccion = 2000; // ms (máximo 2 segundos)
-        long tiempoMaximoConsumo = 3000;    // ms (máximo 3 segundos)
+        long tiempoMaximoProduccion = 1000; // ms
+        long tiempoMaximoConsumo = 1000; // ms
 
         // Crear el almacén compartido
         Almacen almacen = new Almacen(capacidadAlmacen);
@@ -28,43 +28,28 @@ public class App {
         System.out.println("   - Tiempo maximo de producción: " + tiempoMaximoProduccion + "ms");
         System.out.println("   - Tiempo maximo de consumo: " + tiempoMaximoConsumo + "ms\n");
 
-        // Crear productores
-        Productor ñesi = new Productor("Ñesi", almacen, 10, tiempoMaximoProduccion);
-        Productor elPichu = new Productor("El Pichu", almacen, 10, tiempoMaximoProduccion);
-
-        // Crear consumidores
-        Consumidor cesar = new Consumidor("Cesar", almacen, 5, tiempoMaximoConsumo);
-        Consumidor mrGentleman = new Consumidor("Mr. Gentleman(Adrian Te quiero)", almacen, 10, tiempoMaximoConsumo);
-        Consumidor noelia = new Consumidor("Noelia", almacen, 5, tiempoMaximoConsumo);
+        // Crear un único productor y un único consumidor (experimento-uno)
+        Productor productorUnico = new Productor("ProdUnico", almacen, 5, tiempoMaximoProduccion);
+        Consumidor consumidorUnico = new Consumidor("ConsUnico", almacen, 5, tiempoMaximoConsumo);
 
         System.out.println("Participantes:");
         System.out.println("   Productores:");
-        System.out.println("     - Ñesi: 10 productos");
-        System.out.println("     - El Pichu: 10 productos");
+        System.out.println("     - ProdUnico: 5 productos");
         System.out.println("   Consumidores:");
-        System.out.println("     - Cesar: 5 productos");
-        System.out.println("     - Mr. Gentleman(Adrian Te quiero): 10 productos");
-        System.out.println("     - Noelia: 5 productos");
+        System.out.println("     - ConsUnico: 5 productos");
         System.out.println("\nIniciando simulación...\n");
 
         // Iniciar todos los hilos
-        ñesi.start();
-        elPichu.start();
-        cesar.start();
-        mrGentleman.start();
-        noelia.start();
+        productorUnico.start();
+        consumidorUnico.start();
 
         // Esperar a que todos los hilos terminen
-        ñesi.join();
-        elPichu.join();
-        cesar.join();
-        mrGentleman.join();
-        noelia.join();
+        productorUnico.join();
+        consumidorUnico.join();
 
         // Mostrar estadísticas finales
         almacen.mostrarEstadisticas();
         System.out.println("SIMULACION COMPLETADA EXITOSAMENTE");
-        System.out.println("Los productos producidos (20) coinciden con los consumidos (20).\n");
+        System.out.println("Los productos producidos coinciden con los consumidos.\n");
     }
 }
-
