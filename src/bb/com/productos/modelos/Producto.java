@@ -1,4 +1,4 @@
-package src.bb.com.productos.modelos;
+package bb.com.productos.modelos;
 /**
  * Clase que representa un producto generado por los productores.
  * Cada producto tiene un identificador único, tipo, productor y timestamp.
