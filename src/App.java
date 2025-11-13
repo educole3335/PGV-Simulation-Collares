@@ -2,15 +2,6 @@ import bb.com.productos.sincronizacion.Almacen;
 import bb.com.productos.hilos.Productor;
 import bb.com.productos.hilos.Consumidor;
 
-/**
- * Aplicación principal del simulador de productor-consumidor.
- * Simula la producción y consumo de collares en un almacén compartido.
- * 
- * Escenario:
- * - 2 Productores (Ñesi y El Pichu) que producen 10 productos cada uno
- * - 3 Consumidores (Cesar, Mr. Gentleman(Adrian Te quiero), Noelia)
- * - Almacén con capacidad máxima de 5 productos
- */
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("\n===== SIMULADOR DE PRODUCCION Y CONSUMO DE COLLARES =====\n");
