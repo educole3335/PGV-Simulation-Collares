@@ -2,10 +2,8 @@
 
 ## Descripción General
 Este proyecto simula un sistema productor-consumidor aplicado a una **empresa de fabricación de collares**. El simulador demuestra cómo múltiples productores y consumidores interactúan de forma sincronizada a través de un almacén compartido con capacidad limitada.
-
 ---
-
-## 🏭 Empresa: Joyería y Accesorios "Collares Artesanales"
+## Empresa: Joyería y Accesorios "Collares Artesanales"
 
 ### Tipo de Empresa
 Pequeña empresa manufacturera especializada en la **fabricación artesanal de collares** con énfasis en diseño personalizado y calidad.
@@ -28,7 +26,7 @@ Fabricamos **collares** en diversas categorías estéticas:
 ## Roles del Sistema
 
 ### Productor
-**¿Quién?** Obreros/artesanos de la fábrica
+**¿Quiénes?** Obreros/artesanos de la fábrica
 - **Responsabilidad:** Fabricar collares de forma continua
 - **Acciones:**
   1. Produce collares de tipos aleatorios
@@ -42,7 +40,7 @@ Fabricamos **collares** en diversas categorías estéticas:
   - Son independientes pero comparten el mismo almacén
 
 ### Consumidor
-**¿Quién?** Vendedores/distribuidores o proceso de calidad
+**¿Quiénes?** Vendedores/distribuidores o proceso de calidad
 - **Responsabilidad:** Retirar collares del almacén y procesarlos
 - **Acciones:**
   1. Retira un collar del almacén
@@ -73,8 +71,8 @@ Fabricamos **collares** en diversas categorías estéticas:
 
 ```
 Productor 1 ─┐
-Productor 2 ─┼─→ [Almacén Compartido] ←─┬─ Consumidor 1
-Productor 3 ─┘    (Capacidad: 5)         └─ Consumidor 2
+Productor 2 ─┼------> [Almacén Compartido] <─┬─ Consumidor 1
+Productor 3 ─┘    (Capacidad: 5)         └──────Consumidor 2
 ```
 
 **Sincronización:** Cuando hay espacio en el almacén y productos listos, los productores depositan; cuando hay productos en el almacén, los consumidores retiran. El `Almacén` usa locks e se notificaciones mutuas.
