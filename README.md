@@ -83,7 +83,7 @@ Productor 3 ─┘    (Capacidad: 5)         └──────Consumidor 2
 
 ```
 src/
-├── App.java                                  # Aplicación principal
+├── App.java                                  # Aplicación principal (diseño propio)
 ├── AppExperimentoUno.java                    # Experimento 1: Básico
 ├── AppExperimentoDos.java                    # Experimento 2: Producción rápida
 ├── AppExperimentoTres.java                   # Experimento 3: Prioridades
@@ -107,7 +107,7 @@ docs/
 
 ##  Experimentos
 
-Este proyecto incluye tres experimentos que demuestran diferentes aspectos de la concurrencia:
+Este proyecto incluye tres experimentos que demuestran diferentes aspectos de la concurrencia y un experimento extra (cosecha propia Adrian):
 
 ### Experimento-Uno
 - **Rama:** `experimento-uno`
@@ -129,7 +129,7 @@ Este proyecto incluye tres experimentos que demuestran diferentes aspectos de la
 - **Resultado esperado:** Productor ejecuta con mayor frecuencia
 ![alt text](image-3.png)
 ---
-### Ejecutar Aplicación Principal
+### Ejecutar Aplicación Principal (experimento propio)
 ```bash
 java -cp bin App
 ```
